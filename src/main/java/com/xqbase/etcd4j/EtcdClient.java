@@ -82,13 +82,11 @@ public class EtcdClient implements Closeable {
 		return httpAsyncClient;
 	}
 
-	public EtcdClient(URI uri) {
-		String url = uri.toString();
+	public EtcdClient(String url) {
 		if (!url.endsWith("/")) {
 			url += "/";
-			uri = URI.create(url);
 		}
-		this.baseUri = uri;
+		this.baseUri = URI.create(url);
 		httpClient = buildHttpClient();
 	}
 
