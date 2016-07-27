@@ -51,7 +51,7 @@ import com.google.common.util.concurrent.SettableFuture;
  */
 public class EtcdClient implements Closeable {
 
-	private static final CloseableHttpAsyncClient httpClient = buildHttpClient();
+	private final CloseableHttpAsyncClient httpClient;
 
 	private static final String URI_PREFIX = "v2/keys";
 	private static final String DEFAULT_CHARSET = "UTF-8";
@@ -89,6 +89,7 @@ public class EtcdClient implements Closeable {
 			uri = URI.create(url);
 		}
 		this.baseUri = uri;
+		httpClient = buildHttpClient();
 	}
 
 	/**
