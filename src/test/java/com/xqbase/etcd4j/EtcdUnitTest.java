@@ -19,7 +19,7 @@ public class EtcdUnitTest {
     @Before
     public void setUp() throws Exception {
         this.prefix = "/unittest-" + UUID.randomUUID().toString();
-        this.client = new EtcdClient(URI.create("http://127.0.0.1:4001/"));
+        this.client = new EtcdClient("http://127.0.0.1:2379/");
     }
 
     @After

@@ -42,7 +42,7 @@ public class EtcdTimeoutTest {
 
     @Before
     public void setUp() throws Exception {
-        this.client = new EtcdClient(URI.create("http://127.0.0.1:" + PORT));
+        this.client = new EtcdClient("http://127.0.0.1:" + PORT);
     }
 
     @AfterClass

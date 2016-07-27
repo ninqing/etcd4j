@@ -39,7 +39,7 @@ public class EtcdPerfTest {
 
     @Before
     public void setUp() throws Exception {
-        this.client = new EtcdClient(URI.create("http://localhost:4001/"));
+        this.client = new EtcdClient("http://localhost:2379/");
     }
 
     @After
